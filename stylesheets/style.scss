@@ -1,0 +1,27 @@
+/*!
+    Theme Name: Materialize Genesis
+    Description: MaterializeCSS-powered Genesis child theme.
+    Author: SuperFastBusiness
+    Author URI: http://www.superfastbusiness.com/
+    Version: 0.0.1
+    Tags: genesis, material, customizer
+    Template: genesis
+    Template Version: 2.0
+    License: GPL-2.0+
+    License URI: http://www.opensource.org/licenses/gpl-license.php
+    GitHub Theme URI: https://github.com/webdevsuperfast/Bootstrap-for-Genesis
+*/
+
+// Variables
+@import "modules/variables";
+
+// Materialize 
+@import "../bower_components/Materialize/sass/materialize.scss";
+
+// Modules
+@import "modules/extends";
+@import "modules/functions";
+@import "modules/mixins";
+
+
+// Partials
