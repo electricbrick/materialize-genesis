@@ -15,17 +15,23 @@ function genesis_sample_google_fonts() {
 
 }
 
-//* Add HTML5 markup structure
+// Add HTML5 markup structure
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 
-//* Add Accessibility support
+// Add Accessibility support
 add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu',  'search-form', 'skip-links', 'rems' ) );
 
-//* Add viewport meta tag for mobile browsers
+// Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
-//* Add support for custom background
+// Add support for custom background
 add_theme_support( 'custom-background' );
 
-//* Add support for 3-column footer widgets
+// Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
+
+// Include php files from lib folder
+// @link https://gist.github.com/theandystratton/5924570
+foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) { 
+	include $file; 
+}
