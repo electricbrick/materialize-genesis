@@ -1,0 +1,9 @@
+/** Comments
+---------------------------------------------------------- */
+#respond {
+	@extend .row;
+	form {
+		@extend .col;
+		@extend .s12;
+	}
+}

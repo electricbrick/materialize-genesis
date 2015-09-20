@@ -1,0 +1,11 @@
+.sidebar {
+	.search-form {
+		.input-field {
+			label {
+				&.active {
+					transform: translateY(0px);
+				}
+			}
+		}
+	}
+}
