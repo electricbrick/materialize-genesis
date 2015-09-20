@@ -3,17 +3,12 @@
 include_once( get_template_directory() . '/lib/init.php' );
 
 //* Child theme (do not remove)
-define( 'CHILD_THEME_NAME', 'Genesis Sample Theme' );
-define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
-define( 'CHILD_THEME_VERSION', '2.2.0' );
-
-//* Enqueue Google Fonts
-add_action( 'wp_enqueue_scripts', 'genesis_sample_google_fonts' );
-function genesis_sample_google_fonts() {
-
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700', array(), CHILD_THEME_VERSION );
-
-}
+define( 'MCG_THEME_NAME', 'Materialize Genesis' );
+define( 'MCG_THEME_URL', 'http://www.superfastbusiness.com/' );
+define( 'MCG_THEME_VERSION', '0.0.1' );
+define( 'MCG_THEME_LIB', CHILD_DIR . '/lib/' );
+define( 'MCG_THEME_JS', CHILD_URL . '/js/' );
+define( 'MCG_THEME_STYLESHEET', CHILD_URL . '/css/' );
 
 // Add HTML5 markup structure
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
@@ -29,6 +24,26 @@ add_theme_support( 'custom-background' );
 
 // Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
+
+// Structural Wraps
+	add_theme_support( 'genesis-structural-wraps', array(
+		'header',
+		'menu-primary',
+		'menu-secondary',
+		'site-inner',
+		'footer-widgets',
+		'footer'
+	) );
+
+// Move Sidebar Secondary After Content
+remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
+add_action( 'genesis_after_content', 'genesis_get_sidebar_alt' );
+
+// Enqueue Google Fonts
+add_action( 'wp_enqueue_scripts', 'mcg_google_fonts' );
+function mcg_google_fonts() {
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Material+Icons', array(), MCG_THEME_VERSION );
+}
 
 // Include php files from lib folder
 // @link https://gist.github.com/theandystratton/5924570
