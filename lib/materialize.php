@@ -84,8 +84,8 @@ function mcg_layout_options_modify_classes_to_add( $classes_to_add ) {
 
     // sidebar-content          // supported
     if ( 'sidebar-content' === $layout ) {
-        $classes_to_add['content'] = 'col s12 m8';
-        $classes_to_add['sidebar-primary'] = 'col s12 m4';
+        $classes_to_add['content'] = 'col s12 m8 right';
+        $classes_to_add['sidebar-primary'] = 'col s12 m4 left';
     }
 
     // content-sidebar-sidebar  // supported
@@ -98,9 +98,9 @@ function mcg_layout_options_modify_classes_to_add( $classes_to_add ) {
 
     // sidebar-sidebar-content  // supported
     if ( 'sidebar-sidebar-content' === $layout ) {
-        $classes_to_add['content'] = 'col s12 m6';
-        $classes_to_add['sidebar-primary'] = 'col s12 m4';
-        $classes_to_add['sidebar-secondary'] = 'col s12 m2';
+        $classes_to_add['content'] = 'col s12 m6 right';
+        $classes_to_add['sidebar-primary'] = 'col s12 m4 right';
+        $classes_to_add['sidebar-secondary'] = 'col s12 m2 left';
     }
 
 
