@@ -6,6 +6,11 @@
 					transform: translateY(0px);
 				}
 			}
+			input[type="search"] {
+				~ .material-icons {
+					top: 0.5rem;
+				}
+			}
 		}
 	}
 }
