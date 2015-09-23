@@ -49,11 +49,32 @@ function mcg_filter_structural_wrap( $output, $original_output ) {
 	return $output;
 }
 
+// add_filter( 'genesis_structural_wrap-menu-primary', 'mcg_mobile_menu', 10, 3 );
+function mcg_mobile_menu( $output, $original_output ) {
+	switch( $original_output ) {
+		case 'open': 
+				
+			break;
+		case 'close':
+			$output = apply_filters( 'mcg_mobile_menu_args', mcg_mobile_menu_display() ) . $output;
+			break;
+	}
+}
+
+function mcg_mobile_menu_display() {
+	wp_nav_menu( array(
+		'theme_location' => 'mobile'
+	) );
+}
+
 add_filter( 'genesis_structural_wrap-menu-primary', 'mcg_filter_menu_wrap', 10, 2 );
 function mcg_filter_menu_wrap( $output, $original_output ) {
 	switch( $original_output ) {
 		case 'open':
 			$output = str_replace( 'class="wrap', 'class="nav-wrapper wrap', $output );
+			break;
+		case 'close':
+			$output = wp_nav_menu( array( 'theme_location' => 'mobile', 'echo' => 0, 'menu_id' => 'mobile-navigation', 'menu_class' => 'side-nav', 'container' => '' ) ) . $output;
 			break;
 		default:
 			break;
