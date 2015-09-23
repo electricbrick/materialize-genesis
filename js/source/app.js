@@ -1,8 +1,23 @@
 (function($){
 	$(document).ready(function(){
-		$(".dropdown-button").dropdown({
-			hover: false
-		});
+		var $width = document.documentElement.clientWidth;
+		// Dropdown
+		
+		
+		var windowResize = function() {
+			if ( $width > 767 )	{
+				$(".dropdown-button").dropdown({
+					hover: false
+				});		
+			}
+		};
+		
+		$(window).resize(windowResize);
+		
+		windowResize();
+		
+		// Side Navigation
+		$(".button-collapse").sideNav();
 	});
 	
 	// Window load event with minimum delay
@@ -13,6 +28,6 @@
 			if (+new Date - fn.now < 100) {
 				setTimeout(fn, 100);
 			}
-		})
+		});
 	})();	
 })(jQuery);
