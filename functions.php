@@ -45,6 +45,12 @@ function mcg_google_fonts() {
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Material+Icons', array(), MCG_THEME_VERSION );
 }
 
+remove_theme_support( 'genesis-menus' );
+add_theme_support( 'genesis-menus', array(
+	'primary' => __( 'Primary Navigation Menu', 'bfg' ),
+	'mobile' => __( 'Mobile Navigation Menu', 'bfg' )
+) );
+
 // Include php files from lib folder
 // @link https://gist.github.com/theandystratton/5924570
 foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) { 
